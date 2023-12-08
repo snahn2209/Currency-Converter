@@ -46,6 +46,17 @@ struct ConverterView: View {
                     .keyboardType(.decimalPad)
                 Text("£")
             }
+            
+            Button(action: {converterViewModel.downloadExchangeRates()}) {
+            Text("Get Online Exchange Rates")
+                .padding()}
+    
+            Divider()
+            Text("Source of Online Exchange Rates: European Central Bank")
+                .italic()
+                .padding()
+
+
         }
         .padding()
     }
