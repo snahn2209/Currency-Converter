@@ -18,15 +18,33 @@ struct ConverterView: View {
             Text("Currency Converter").font(.title)
             HStack{
                 Text("Rate € -> $")
-                TextField("Euro to USD", text: $converterViewModel.usd)
+                TextField("Euro to USD", text: $converterViewModel.euroToUSD)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .keyboardType(.decimalPad)
             }
             HStack {
                 Text("Rate € -> £")
-                TextField("Euro to Pound", text: $converterViewModel.pound)
+                TextField("Euro to Pound", text: $converterViewModel.euroToPound)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .keyboardType(.decimalPad)
+            }
+            HStack {
+                TextField("", text: $converterViewModel.euros)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .keyboardType(.decimalPad)
+                Text("€")
+            }
+            HStack {
+                TextField("", text: $converterViewModel.usd)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .keyboardType(.decimalPad)
+                Text("$")
+            }
+            HStack {
+                TextField("", text: $converterViewModel.pound)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .keyboardType(.decimalPad)
+                Text("£")
             }
         }
         .padding()
