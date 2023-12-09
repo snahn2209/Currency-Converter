@@ -69,7 +69,7 @@ class ConverterViewModel: ObservableObject {
             let contentString = try String(contentsOf: url, encoding: .utf8)
                     
             if let usdRange = contentString.range(of: "\"USD\" rate=\"") {
-                let startIndex = usdRange.upperBound
+                let startIndex = usdRange.upperBound    //points to character immediately after "rate="
                 if let endIndex = contentString[startIndex...].firstIndex(of: "\"") {
                     //[startIndex...] -> creates a partial range from startIndex to the end of the string
                     let substring = contentString[startIndex..<endIndex]
